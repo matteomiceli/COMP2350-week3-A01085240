@@ -7,16 +7,26 @@ const http = require('http');
 
 const port = process.env.PORT || 3000;
 
+// const dbConfig = {
+// 	host: "localhost",
+// 	user: "root",
+// 	password: "supernova",
+// 	database: "test_data_constraints_o_miceli",
+// 	port: '3306',
+// 	multipleStatements: false,
+// 	reconnect: true
+// }
+
 let dbConfig;
 if (process.env.IS_HEROKU != 1) {
 	dbConfig = {
-		host: "localhost",
-		user: "root",
-		password: "supernova",
-		database: "Local instance 3306",
-		port: '3000',
-		multipleStatements: false,
-		reconnect: true
+	host: "localhost",
+	user: "root",
+	password: "supernova",
+	database: "test_data_constraints_o_miceli",
+	port: '3306',
+	multipleStatements: false,
+	reconnect: true
 	};
 	console.log('not heroku');
 }  else if (process.env.IS_HEROKU == 1) {
