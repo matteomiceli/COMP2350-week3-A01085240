@@ -2,19 +2,37 @@
 mysql://b29f1406200b9a:db4f7bf0@us-cdbr-east-03.cleardb.com/heroku_e8d6db0c15d4372?reconnect=true
 */
 
-const mysql = require('mysql');
+const mysql = require('mysql2');
 const http = require('http');
 
 const port = process.env.PORT || 3000;
 
-const dbConfig = {
-	host: "us-cdbr-east-03.cleardb.com",
-	user: "b29f1406200b9a",
-	password: "db4f7bf0",
-	database: "heroku_e8d6db0c15d4372",
-	multipleStatements: false,
-	reconnect: true
-};
+let dbConfig;
+if (process.env.IS_HEROKU != 1) {
+	dbConfig = {
+		host: "localhost",
+		user: "root",
+		password: "supernova",
+		database: "Local instance 3306",
+		port: '3000',
+		multipleStatements: false,
+		reconnect: true
+	};
+	console.log('not heroku');
+}  else if (process.env.IS_HEROKU == 1) {
+	dbConfig = {
+		host: "us-cdbr-east-03.cleardb.com",
+		user: "b29f1406200b9a",
+		password: "db4f7bf0",
+		database: "heroku_e8d6db0c15d4372",
+		multipleStatements: false,
+		reconnect: true
+	};
+	console.log('heroku');
+} else {
+	console.log('not connected to host');
+}
+
 
 var database = mysql.createPool(dbConfig);
 
@@ -63,6 +81,4 @@ http.createServer(function(req, res) {
 		}
 	});
 }).listen(port);
-
-
 

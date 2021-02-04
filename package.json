@@ -1,13 +1,23 @@
 {
-	"name": "tutorial",
-	"version": "1.0.0",
-	"scripts": {
-		"start": "node index.js"
-	},
-	"dependencies": {
-		"mysql": "^2.18.1",
-		"mysql2": "^2.1.0"
-	},
-	"author": "Patrick",
-	"license": "ISC"
+  "name": "tutorial",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0"
+  },
+  "author": "Patrick",
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matteomiceli/COMP2350-week3-A01085240.git"
+  },
+  "bugs": {
+    "url": "https://github.com/matteomiceli/COMP2350-week3-A01085240/issues"
+  },
+  "homepage": "https://github.com/matteomiceli/COMP2350-week3-A01085240#readme",
+  "description": ""
 }
