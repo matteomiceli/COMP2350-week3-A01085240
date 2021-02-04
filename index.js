@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 const dbConfig = {
 	host: "us-cdbr-east-03.cleardb.com",
 	user: "b29f1406200b9a",
-	password: "db4f7bf",
+	password: "db4f7bf0",
 	database: "heroku_e8d6db0c15d4372",
 	multipleStatements: false,
 	reconnect: true
