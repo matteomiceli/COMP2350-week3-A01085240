@@ -1,13 +1,17 @@
+/* 
+mysql://b29f1406200b9a:db4f7bf0@us-cdbr-east-03.cleardb.com/heroku_e8d6db0c15d4372?reconnect=true
+*/
+
 const mysql = require('mysql');
 const http = require('http');
 
 const port = process.env.PORT || 3000;
 
 const dbConfig = {
-	host: "host",
-	user: "user",
-	password: "password",
-	database: "database",
+	host: "us-cdbr-east-03.cleardb.com",
+	user: "b29f1406200b9ac",
+	password: "db4f7bf",
+	database: "heroku_e8d6db0c15d4372",
 	multipleStatements: false,
 	reconnect: true
 };
